@@ -18,6 +18,23 @@
 		<java.version>15</java.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>gitlab-maven</id>
+			<url>https://192.168.2.106:8080/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+		</repository>
+		</repositories>
+		<distributionManagement>
+		<repository>
+			<id>gitlab-maven</id>
+			<url>https://192.168.2.106:8080/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+		</repository>
+		<snapshotRepository>
+			<id>gitlab-maven</id>
+			<url>https://192.168.2.106:8080/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+		</snapshotRepository>
+		</distributionManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
