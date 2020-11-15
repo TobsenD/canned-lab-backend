@@ -1,12 +1,12 @@
 package de.dols.cannedlabbackend.model;
 
-import java.io.File;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,11 +28,12 @@ public class Product {
 	private long id;
 	@NonNull
 	private String name;
-	private File image;
+	@Lob
+	private String image;
 	@NonNull
 	private String typ;
-	@NonNull
 	private Date canDate;
+	@NonNull
 	private Date mhdDate;
 	@NonNull
 	private Integer menge;
