@@ -1,14 +1,9 @@
 image: docker:latest
 services:
   - name: docker:dind
-    entrypoint: ["env", "-u", "DOCKER_HOST"]
-    command: ["dockerd-entrypoint.sh"]
 
 variables:
-  DOCKER_HOST: tcp://192.168.2.110:2375/
   DOCKER_DRIVER: overlay
-  # See https://github.com/docker-library/docker/pull/166
-  DOCKER_TLS_CERTDIR: ""
   SPRING_PROFILES_ACTIVE: gitlab-ci
 
 stages:
