@@ -15,7 +15,7 @@ maven-build:
   script: "mvn package -B"
   artifacts:
     paths:
-      - target/*.jar
+      - target/app.jar
 
 docker-build-main:
   image: docker:stable

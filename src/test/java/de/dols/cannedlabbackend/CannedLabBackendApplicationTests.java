@@ -19,7 +19,7 @@ import de.dols.cannedlabbackend.repository.ProductRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@TestPropertySource(locations = "classpath:application-dev.properties")
+@TestPropertySource(locations="classpath:application-dev.properties")
 class CannedLabBackendApplicationTests {
 
 	@Autowired
