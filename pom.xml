@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>canned-lab-backend</name>
 	<description>Backend Project for canned lab angular application</description>
+	
 
 	<properties>
 		<java.version>15</java.version>
@@ -71,6 +72,7 @@
 	</dependencies>
 
 	<build>
+	 	<finalName>canned-lab-backend</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
