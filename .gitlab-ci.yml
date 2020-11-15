@@ -14,7 +14,9 @@ maven-build:
   stage: build
   script: "mvn package -B"
   artifacts:
-    name: "$CI_PROJECT_NAME" 
+    name: "$CI_PROJECT_NAME"
+    when: on_success
+    expire_in: 2 weeks 
     paths:
       - target/
 
