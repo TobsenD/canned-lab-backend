@@ -1,9 +1,10 @@
 image: docker:latest
 services:
-  - name: docker:dind
+  - name: docker:stable
 
 variables:
   DOCKER_DRIVER: overlay
+  DOCKER_TLS_CERTDIR: ''
   SPRING_PROFILES_ACTIVE: gitlab-ci
 
 stages:
@@ -21,7 +22,6 @@ maven-build:
 docker-build-main:
   stage: package
   before_script:
-    - echo $CI_REGISTRY_IMAGE
     - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   script:
     - docker build --pull -t $CI_REGISTRY_IMAGE .
