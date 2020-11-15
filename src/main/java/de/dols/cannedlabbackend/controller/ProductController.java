@@ -17,7 +17,7 @@ import de.dols.cannedlabbackend.model.Product;
 import de.dols.cannedlabbackend.repository.ProductRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://192.168.2.106:4200")
 public class ProductController {
 
 	private final ProductRepository productRepository;
