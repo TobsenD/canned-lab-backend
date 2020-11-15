@@ -14,8 +14,9 @@ maven-build:
   stage: build
   script: "mvn package -B"
   artifacts:
+    name: "$CI_PROJECT_NAME" 
     paths:
-      - target/app.jar
+      - target/
 
 docker-build-main:
   image: docker:stable
