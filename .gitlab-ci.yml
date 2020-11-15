@@ -23,6 +23,7 @@ maven-build:
       - target/*.jar
 
 docker-build-main:
+  image: docker:stable
   stage: package
   before_script:
     - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
@@ -33,6 +34,7 @@ docker-build-main:
     - main
     
 docker-build:
+  image: docker:stable
   # Official docker image.
   stage: package
   before_script:
