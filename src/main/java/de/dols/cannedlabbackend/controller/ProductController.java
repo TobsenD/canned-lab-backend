@@ -3,6 +3,7 @@ package de.dols.cannedlabbackend.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,16 +38,19 @@ public class ProductController {
 	}
 
 	@PostMapping("/products")
+	@Transactional
 	public void addProduct(@RequestBody Product product) {
 		productRepository.save(product);
 	}
 
 	@PutMapping("/products")
+	@Transactional
 	public void updateProduct(@RequestBody Product product) {
 		productRepository.save(product);
 	}
 
 	@DeleteMapping("/products/{id}")
+	@Transactional
 	public void deleteProduct(@PathVariable Long id) {
 		productRepository.delete(productRepository.findById(id).get());
 	}
